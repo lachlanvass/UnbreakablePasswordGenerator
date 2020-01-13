@@ -14,13 +14,13 @@ namespace UnbreakablePasswordGenerator
             this.CharSet = charSet;
             SelectedPasswordLength = length;
 
-            if (CharSet.Count > 0)
+            if (CharSet.Count > UPGConstants.MinPasswordLength)
             {
                 this.Password = this.GenerateRandomPasswordOfLength(SelectedPasswordLength);
             }
             else
             {
-                this.Password = "Press Toggles to build password";
+                this.Password = UPGConstants.PasswordPrompt;
             }
         }
         public GeneratedPassword()
