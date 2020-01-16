@@ -12,7 +12,7 @@ namespace UnbreakablePasswordGenerator
         public MainPage()
         {
             this.InitializeComponent();
-            IntList = Enumerable.Range(1, 200).ToArray();
+            IntList = Enumerable.Range(UPGConstants.MinPasswordLength, UPGConstants.MaxPassworthLength).ToArray();
 
             // Ensure it is impossible to select a null value by providing a default
             PasswordLengthSelect.SelectedIndex = UPGConstants.MinPasswordLength; 
@@ -23,8 +23,6 @@ namespace UnbreakablePasswordGenerator
         private int GetPasswordLengthAsInt()
         {
             string selectedLength = PasswordLengthSelect.Text;
-            //ComboBoxItem selectedLengthItem = PasswordLengthSelect.SelectedItem as ComboBoxItem;
-            //string selectedPasswordLengthString = selectedLength.Content.ToString();
             return Convert.ToInt32(PasswordLengthSelect.SelectedItem.ToString());
 
         }
@@ -41,8 +39,6 @@ namespace UnbreakablePasswordGenerator
             };
             
             int passwordLength = this.GetPasswordLengthAsInt();
-            // TODO save value to class. Check if the value changed. If not, use condition to skip lines 
-            // Read the desired length
             
             // Generate Charset and init password generator
             List<String> characterSet = charSet.GenerateCharSet();

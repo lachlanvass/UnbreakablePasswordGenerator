@@ -5,6 +5,7 @@ namespace UnbreakablePasswordGenerator
     {
         public const string PasswordPrompt = "Press Toggles to build password";
 
-        public const byte MinPasswordLength = 0;
+        public const byte MinPasswordLength = 1;
+        public const byte MaxPassworthLength = 200;
     }
 }
