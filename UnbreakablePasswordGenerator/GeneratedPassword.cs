@@ -33,10 +33,13 @@ namespace UnbreakablePasswordGenerator
         {
             StringBuilder sb = new StringBuilder();
             Random randomCharGenerator = new Random();
-            
+            // Generate dynamic character set of LENGTH and then use that in the loop - 
+            // which will handle the password length chosen being longer than the char set.
+
+            //List<String> newCharSetList = new List<String>();
             for (byte i = 0; i < length; i++)
             {
-                int newRandomInt = randomCharGenerator.Next(0, length - 1);
+                int newRandomInt = randomCharGenerator.Next(0, CharSet.Count - 1); // replace magic literals with consts
 
                 // Get random char from CharSet using newRandomInt
 

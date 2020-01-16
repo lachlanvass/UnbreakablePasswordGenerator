@@ -53,7 +53,7 @@
                         <!-- Use Datasource for long list of options Max 128-->
                         <ComboBoxItem IsSelected="True" Content="1"/>
                         <ComboBoxItem Content="2"/>
-                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="200"/>
                     </ComboBox>
                 </Grid>
                 <!-- Password Output grid -->
