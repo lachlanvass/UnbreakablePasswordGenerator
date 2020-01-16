@@ -22,12 +22,14 @@ namespace UnbreakablePasswordGenerator
 
         private void ToggleSwitched(object sender, RoutedEventArgs e)
         {
-            // Read Toggles and build Charset based on selections
-            CharacterSet charSet = new CharacterSet();
-            charSet.ContainsLowercase = LowerCaseSwitch.IsOn;
-            charSet.ContainsUppercase = UpperCaseSwitch.IsOn;
-            charSet.ContainsNumerals = NumeralSwitch.IsOn;
-            charSet.ContainsSymbols = SymbolSwitch.IsOn;
+            // Read Toggsles and build Charset based on selections
+            CharacterSet charSet = new CharacterSet
+            {
+                ContainsLowercase = LowerCaseSwitch.IsOn,
+                ContainsUppercase = UpperCaseSwitch.IsOn,
+                ContainsNumerals = NumeralSwitch.IsOn,
+                ContainsSymbols = SymbolSwitch.IsOn
+            };
 
             int passwordLength = this.GetPasswordLengthAsInt();
             // TODO save value to class. Check if the value changed. If not, use condition to skip lines 
