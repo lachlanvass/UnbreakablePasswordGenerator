@@ -42,11 +42,14 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    
+                    <!--Toggle switches--> 
                     <ToggleSwitch x:Name="LowerCaseSwitch" Grid.Column="0" Grid.Row="0" Header="Lower Case" Toggled="ToggleSwitched"/>
                     <ToggleSwitch x:Name="UpperCaseSwitch" Grid.Column="1" Grid.Row="0" Header="Upper Case" Toggled="ToggleSwitched"/>
                     <ToggleSwitch x:Name="NumeralSwitch" Grid.Column="2" Grid.Row="0" Header="Numerals" Toggled="ToggleSwitched"/>
                     <ToggleSwitch x:Name="SymbolSwitch" Grid.Column="3" Grid.Row="0" Header="Symbols" Toggled="ToggleSwitched"/>
                     <ComboBox x:Name="PasswordLengthSelect" Grid.Column="0" Grid.Row="2">
+                        
                         <!-- Use Datasource for long list of options Max 128-->
                         <ComboBoxItem IsSelected="True" Content="1"/>
                         <ComboBoxItem Content="2"/>
