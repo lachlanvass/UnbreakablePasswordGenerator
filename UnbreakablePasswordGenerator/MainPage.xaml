@@ -7,42 +7,64 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
-    
+
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <!-- Toggle Controls Grid -->
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <ToggleSwitch x:Name="LowerCaseSwitch" Grid.Column="0" Grid.Row="0" Header="Lower Case" Toggled="ToggleSwitched"/>
-            <ToggleSwitch x:Name="UpperCaseSwitch" Grid.Column="1" Grid.Row="0" Header="Upper Case" Toggled="ToggleSwitched"/>
-            <ToggleSwitch x:Name="NumeralSwitch" Grid.Column="2" Grid.Row="0" Header="Numerals" Toggled="ToggleSwitched"/>
-            <ToggleSwitch x:Name="SymbolSwitch" Grid.Column="3" Grid.Row="0" Header="Symbols" Toggled="ToggleSwitched"/>
-            <ComboBox x:Name="PasswordLengthSelect" Grid.Column="0" Grid.Row="2">
-                <!-- Use Datasource for long list of options Max 128-->
-                <ComboBoxItem IsSelected="True">1</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-            </ComboBox>
-        </Grid>
-        <!-- Password Output grid -->
-        <Grid Grid.Row="1">
-            <TextBox x:Name="PasswordOutputTxtBox" Grid.Column="0" Grid.Row="3" Text="Password Here" TextWrapping="Wrap"/>
-        </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Character set visualiser goes here.-->
+        <StackPanel Grid.Column="0" Background="Black">
+            <Rectangle Width="500" />
+        </StackPanel> 
+
+        <!--Primary content goes here. Password output + toggles-->
+        <StackPanel Grid.Column="1" Background="Beige">
+            <Rectangle Fill="Beige" />
+            <Grid Height="1000" Width="616">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!-- Toggle Controls Grid -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ToggleSwitch x:Name="LowerCaseSwitch" Grid.Column="0" Grid.Row="0" Header="Lower Case" Toggled="ToggleSwitched"/>
+                    <ToggleSwitch x:Name="UpperCaseSwitch" Grid.Column="1" Grid.Row="0" Header="Upper Case" Toggled="ToggleSwitched"/>
+                    <ToggleSwitch x:Name="NumeralSwitch" Grid.Column="2" Grid.Row="0" Header="Numerals" Toggled="ToggleSwitched"/>
+                    <ToggleSwitch x:Name="SymbolSwitch" Grid.Column="3" Grid.Row="0" Header="Symbols" Toggled="ToggleSwitched"/>
+                    <ComboBox x:Name="PasswordLengthSelect" Grid.Column="0" Grid.Row="2">
+                        <!-- Use Datasource for long list of options Max 128-->
+                        <ComboBoxItem IsSelected="True" Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                    </ComboBox>
+                </Grid>
+                <!-- Password Output grid -->
+                <Grid Grid.Row="2">
+                    <TextBox x:Name="PasswordOutputTxtBox" Grid.Column="0" Grid.Row="3" Text="Password Here" TextWrapping="Wrap"/>
+                </Grid>
+            </Grid>
+        </StackPanel>
+
+        <!-- Brute Force Timer goes here-->
+        <StackPanel Grid.Column="2" Background="Black">
+            <Rectangle Fill="Cornsilk" Width="500"/>
+        </StackPanel>
     </Grid>
-   
+
+
 </Page>
