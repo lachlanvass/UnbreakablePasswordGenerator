@@ -34,7 +34,7 @@ namespace UnbreakablePasswordGenerator
             StringBuilder sb = new StringBuilder();
             Random randomCharGenerator = new Random();
             
-            for (byte i = 0; i <= length; i++)
+            for (byte i = 0; i < length; i++)
             {
                 int newRandomInt = randomCharGenerator.Next(0, length - 1);
 

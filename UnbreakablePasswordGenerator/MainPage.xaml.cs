@@ -37,7 +37,7 @@ namespace UnbreakablePasswordGenerator
             
             // Generate Charset and init password generator
             List<String> characterSet = charSet.GenerateCharSet();
-            GeneratedPassword generatedPassword = new GeneratedPassword(characterSet, characterSet.Count);
+            GeneratedPassword generatedPassword = new GeneratedPassword(characterSet, passwordLength);
 
             // Set output text as the value of the Generated password
             PasswordOutputTxtBox.Text = generatedPassword.Password;
