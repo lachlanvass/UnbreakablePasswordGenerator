@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using System.Linq;
-using Windows.UI.Popups;
 namespace UnbreakablePasswordGenerator
 {
     public sealed partial class MainPage : Page
     {
-        int[] IntList; // Data source for UI Combobox PasswordLengthSelect
+        private readonly int[] IntList; // Data source for UI Combobox PasswordLengthSelect
         public MainPage()
         {
             this.InitializeComponent();
-            IntList = Enumerable.Range(UPGConstants.MinPasswordLength, UPGConstants.MaxPassworthLength).ToArray();
+            IntList = Enumerable.Range(UPGConstants.MinPasswordLength, 5000).ToArray();
 
             // Ensure it is impossible to select a null value by providing a default
             PasswordLengthSelect.SelectedIndex = UPGConstants.MinPasswordLength; 
-            
-            
         }
 
         private int GetPasswordLengthAsInt()
@@ -37,6 +34,9 @@ namespace UnbreakablePasswordGenerator
                 ContainsNumerals = NumeralSwitch.IsOn,
                 ContainsSymbols = SymbolSwitch.IsOn
             };
+
+            CharacterSetVisualiser characterSetVisualiser = new CharacterSetVisualiser(charSet);
+            CharacterSetVisualiserTXTBox.Text = characterSetVisualiser.GenerateCharSetString();
             
             int passwordLength = this.GetPasswordLengthAsInt();
             

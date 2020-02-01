@@ -17,7 +17,7 @@
 
         <!--Character set visualiser goes here.-->
         <StackPanel Grid.Column="0" Background="Black">
-            <Rectangle Width="500" />
+            <TextBox x:Name="CharacterSetVisualiserTXTBox" TextWrapping="Wrap" IsReadOnly="True"/>
         </StackPanel> 
 
         <!--Primary content goes here. Password output + toggles-->
@@ -48,11 +48,12 @@
                     <ToggleSwitch x:Name="UpperCaseSwitch" Grid.Column="1" Grid.Row="0" Header="Upper Case" Toggled="ToggleSwitched"/>
                     <ToggleSwitch x:Name="NumeralSwitch" Grid.Column="2" Grid.Row="0" Header="Numerals" Toggled="ToggleSwitched"/>
                     <ToggleSwitch x:Name="SymbolSwitch" Grid.Column="3" Grid.Row="0" Header="Symbols" Toggled="ToggleSwitched"/>
+                    
                     <ComboBox x:Name="PasswordLengthSelect" ItemsSource="{x:Bind IntList}" Grid.Column="0" Grid.Row="2">
-                        
-                        <!-- Use Datasource for long list of options Max 128-->
+                        <!-- Dynamically populated with ints up to UPGContants.MaxPasswordLength -->
                     </ComboBox>
                 </Grid>
+                
                 <!-- Password Output grid -->
                 <Grid Grid.Row="2">
                     <TextBox x:Name="PasswordOutputTxtBox" Grid.Column="0" Grid.Row="3" Text="Password Here" TextWrapping="Wrap"/>
